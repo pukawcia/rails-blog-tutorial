@@ -1,21 +1,114 @@
-<h1>Listing articles</h1>
-<%= link_to 'New article', new_article_path %>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th colspan="3"></th>
-  </tr>
+<div class="row">
+  <div class="col-md-12">
+    <h1>Welcome to AnnieStudiees's blog - studying tips & tricks</h1>
+  </div>
+  <div class="col-md-12">
+    <div class="pull-right">
+      <%= link_to 'New article', new_article_path, class: 'btn btn-info' %>
+    </div>
+    <table class="table table-striped table-hover ">
+      <tr>
+        <th>Title</th>
+        <th>Article</th>
+        <th colspan="3"></th>
+      </tr>
 
-  <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Destroy', article_path(article),
-                      method: :delete,
-                      data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
-</table>
+      <% @articles.each do |article| %>
+        <tr>
+          <td><%= article.title %></td>
+          <td><%= article.text %></td>
+          <td><%= link_to 'Show', article_path(article) %></td>
+          <td><%= link_to 'Edit', edit_article_path(article) %></td>
+          <td><%= link_to 'Destroy', article_path(article),
+                          method: :delete,
+                          data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </table>
+
+    <ul class="list-group">
+      <li class="list-group-item">
+        <span class="badge">1</span>
+        How many posts are now on the blog?
+      </li>
+      <li class="list-group-item">
+        <span class="badge">2</span>
+        How many comments are there now?
+      </li>
+      <li class="list-group-item">
+        <span class="badge">1</span>
+        How many followers this blog has?
+      </li>
+    </ul>
+    Blog in progress..
+    <div class="progress progress-striped active">
+      <div class="progress-bar" style="width: 10%"></div>
+    </div>
+
+    <form class="form-horizontal">
+      <fieldset>
+        <legend>Sign up to receive the newsletter!</legend>
+        <div class="form-group">
+          <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+          <div class="col-lg-10">
+            <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+          <div class="col-lg-10">
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> I confirm that my e-mail is correct
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="textArea" class="col-lg-2 control-label">Additional information</label>
+          <div class="col-lg-10">
+            <textarea class="form-control" rows="3" id="textArea"></textarea>
+            <span class="help-block">Write down anything that you want the author to read</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-2 control-label">Additional materials</label>
+          <div class="col-lg-10">
+            <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                I would like to receive additional materials from the author!
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                I'm fine with just the newsletter, thanks!
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="select" class="col-lg-2 control-label">Choose the suitable option</label>
+          <div class="col-lg-10">
+            <select class="form-control" id="select">
+              <option>I am interested in study planners</option>
+              <option>I am interested in calendars </option>
+              <option>I am interested in home organization planners</option>
+              <option>I am interested in daily planners</option>
+              <option>Other</option>
+            </select>
+            <br>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-lg-10 col-lg-offset-2">
+            <button type="reset" class="btn btn-default">Cancel</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>

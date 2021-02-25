@@ -38,6 +38,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 #
 #
+gem 'mini_racer'
+
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootswatch-sass', '< 4.0.0'
